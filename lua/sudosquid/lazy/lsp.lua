@@ -11,6 +11,7 @@ return {
         "L3MON4D3/LuaSnip",
         "saadparwaiz1/cmp_luasnip",
         "j-hui/fidget.nvim",
+        "lopi-py/luau-lsp.nvim",
     },
 
     config = function()
@@ -27,7 +28,6 @@ return {
         require("mason-lspconfig").setup({
             ensure_installed = {
                 "lua_ls",
-                "luau_lsp",
                 "gopls",
                 "clangd",
                 "yamlls",
@@ -75,6 +75,21 @@ return {
                         }
                     }
                 end,
+                ["luau_lsp"] = function()
+                    require("luau-lsp").setup {
+                        platform = {
+                            type = "roblox",
+                        },
+                        types = {
+                            roblox_security_level = "PluginSecurity",
+                        },
+                        sourcemap = {
+                            enabled = true,
+                            autogenerate = true,
+                            rojo_project_file = "default.project.json",
+                        },
+                    }
+                end
             }
         })
 
