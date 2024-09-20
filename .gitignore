@@ -1,0 +1,2 @@
+# Don't include the lockfile in the git repository
+lazy-lock.json
