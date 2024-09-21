@@ -4,7 +4,7 @@ return {
     -- "edkolev/tmuxline.vim",
     -- config = function()
     --     vim.cmd.Tmuxline()
-    --     vim.cmd.TmuxlineSnapshot("$HOME/.tmux/tmuxline.vim!")
+    --     vim.cmd.TmuxlineSnapshot("$HOME/.tmux/tmuxline.vim")
     -- end,
 }
 

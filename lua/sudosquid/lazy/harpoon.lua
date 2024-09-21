@@ -20,3 +20,4 @@ return {
 		vim.keymap.set("n", "<leader><C-l>", function() harpoon:list():replace_at(4) end)
     end
 }
+
