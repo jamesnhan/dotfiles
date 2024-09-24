@@ -12,6 +12,7 @@ return {
         "saadparwaiz1/cmp_luasnip",
         "j-hui/fidget.nvim",
         "lopi-py/luau-lsp.nvim",
+        "hashicorp/terraform-ls",
     },
 
     config = function()
@@ -78,7 +79,15 @@ return {
                 ["ts_ls"] = function ()
                     local lspconfig = require("lspconfig")
                     lspconfig.ts_ls.setup {}
-                end
+                end,
+                ["terraformls"] = function()
+                    require("lspconfig").terraformls.setup {
+                        capabilities = capabilities,
+                        cmd = { "terraform-ls", "serve" },
+                        filetypes = { "hcl", "tf", "tfvars" },
+                        root_dir = require("lspconfig.util").root_pattern(".terraform", ".git"),
+                    }
+                end,
             }
         })
 
