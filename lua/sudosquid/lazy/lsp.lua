@@ -13,6 +13,7 @@ return {
         "j-hui/fidget.nvim",
         "lopi-py/luau-lsp.nvim",
         "hashicorp/terraform-ls",
+        {"towolf/vim-helm", ft = "helm"},
     },
 
     config = function()
@@ -31,6 +32,7 @@ return {
                 "lua_ls",
                 "gopls",
                 "clangd",
+                "helm_ls",
                 "yamlls",
                 "jsonls",
                 "ts_ls",
@@ -88,6 +90,22 @@ return {
                         root_dir = require("lspconfig.util").root_pattern(".terraform", ".git"),
                     }
                 end,
+                ["helm_ls"] = function ()
+                    require("lspconfig").helm_ls.setup {
+                        settings = {
+                            ["helm_ls"] = {
+                                yamlls = {
+                                    enabled = false,
+                                    enabledForFilesGlob = "*.{yaml,.yml}",
+                                    path = "yaml-langauge-server",
+                                    config = {
+                                        keyOrdering = false,
+                                    },
+                                },
+                            },
+                        },
+                    }
+                end
             }
         })
 
