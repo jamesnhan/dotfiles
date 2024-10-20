@@ -16,7 +16,7 @@ return {
             end
         end)
 
-        vim.keymap.set("n", "<leader>a", mc.alignCursors)
+        vim.keymap.set("n", "<leader>A", mc.alignCursors)
         vim.keymap.set("v", "<leader>S", mc.splitCursors)
         vim.keymap.set("v", "I", mc.insertVisual)
         vim.keymap.set("v", "A", mc.appendVisual)
