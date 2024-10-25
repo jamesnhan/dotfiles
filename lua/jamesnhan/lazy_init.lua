@@ -12,7 +12,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-    spec = "sudosquid.lazy",
+    spec = "jamesnhan.lazy",
     change_detection = { notify = false }
 })
 

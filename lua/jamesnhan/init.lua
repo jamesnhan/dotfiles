@@ -1,4 +1,4 @@
-require("sudosquid.remap")
-require("sudosquid.set")
-require("sudosquid.lazy_init")
+require("jamesnhan.remap")
+require("jamesnhan.set")
+require("jamesnhan.lazy_init")
 
